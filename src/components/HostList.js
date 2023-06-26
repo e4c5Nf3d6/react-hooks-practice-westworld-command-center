@@ -1,9 +1,10 @@
 import React from "react";
 import { Card } from "semantic-ui-react";
+import Host from "./Host"
 
-function HostList() {
+function HostList({ hosts, selectedHost, onSetSelectedHost }) {
   return (
-    <Card.Group itemsPerRow={6}>{/* What do you think, partner? */}</Card.Group>
+    <Card.Group itemsPerRow={6}>{hosts.map(host => <Host key={host.id} host={host} selectedHost={selectedHost} onSetSelectedHost={onSetSelectedHost} />)}</Card.Group>
   );
 }
 
